@@ -1,0 +1,26 @@
+{
+  "name": "projet-reactos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastien-gervilla/projet-reactos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastien-gervilla/projet-reactos/issues"
+  },
+  "homepage": "https://github.com/sebastien-gervilla/projet-reactos#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
+  }
+}
