@@ -1,5 +1,5 @@
 {
-  "name": "projet-reactos",
+  "name": "sage",
   "version": "1.0.0",
   "description": "A javascript library",
   "main": "./dist/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebastien-gervilla/projet-reactos.git"
+    "url": "git+https://github.com/sebastien-gervilla/sage.git"
   },
   "keywords": [
     "javascript",
@@ -19,9 +19,9 @@
   "author": "Sébastien Gervilla (sebastien-gervilla)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sebastien-gervilla/projet-reactos/issues"
+    "url": "https://github.com/sebastien-gervilla/sage/issues"
   },
-  "homepage": "https://github.com/sebastien-gervilla/projet-reactos#readme",
+  "homepage": "https://github.com/sebastien-gervilla/sage#readme",
   "devDependencies": {
     "@types/node": "^20.4.2",
     "concurrently": "^8.2.0",
