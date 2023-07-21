@@ -2,11 +2,12 @@
   "name": "sage",
   "version": "1.0.0",
   "description": "A javascript library",
+  "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "npx tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
