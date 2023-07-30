@@ -1,7 +1,6 @@
 export { createElement } from './core';
 
 export {
-    // SageElement
     type SageElement,
     type HTMLElement,
     type Key,
@@ -10,6 +9,8 @@ export {
     DOMAttributes,
     HTMLAttributes,
     SageHTML,
+    FunctionComponent,
+    SageAttributes,
 
     // HTMLElements
     AnchorHTMLAttributes

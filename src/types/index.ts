@@ -1,12 +1,14 @@
 export {
     type SageElement,
     type HTMLElement,
-    type HTMLAttributes,
-    type SageHTML,
     type Key,
     type SageNode,
-    type DOMAttributes,
-    type JSXElement
+    type JSXElement,
+    DOMAttributes,
+    HTMLAttributes,
+    SageHTML,
+    FunctionComponent,
+    SageAttributes,
 } from './SageElement';
 
 export {
