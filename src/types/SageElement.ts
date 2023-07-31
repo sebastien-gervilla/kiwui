@@ -1,7 +1,7 @@
 export type SageElement = {
     key: Key | null
     type: keyof SageHTML | FunctionComponent
-    props: HTMLAttributes | null | undefined
+    props: HTMLAttributes | null | undefined | {}
 }
 
 export type HTMLElement = {
