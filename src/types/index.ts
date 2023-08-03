@@ -11,6 +11,6 @@ export {
     SageAttributes,
 } from './SageElement';
 
-export {
-    AnchorHTMLAttributes
-} from './HTMLElements';
+export * from './HTMLElements';
+
+export * from './events';

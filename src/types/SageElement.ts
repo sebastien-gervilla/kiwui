@@ -1,3 +1,5 @@
+import { SageEvents } from "./events"
+
 export type SageElement = {
     key: Key | null
     type: keyof SageHTML | FunctionComponent
@@ -12,7 +14,9 @@ export interface SageAttributes {
     key?: Key | null | undefined;
 }
 
-export interface HTMLAttributes extends DOMAttributes {
+export interface ElementAttributes<Attributes extends HTMLAttributes> extends SageEvents<Attributes> { }
+
+export interface HTMLAttributes {
     // Sage attributes
     key?: Key | null | undefined;
 
@@ -37,6 +41,6 @@ export interface DOMAttributes {
     onClick?: () => void | undefined
 }
 
-export type JSXElement<Attributes extends HTMLAttributes> = Attributes;
+export type JSXElement<Attributes extends HTMLAttributes> = Attributes & SageEvents<Attributes>;
 
 export type FunctionComponent<P = {}> = (props: P) => SageElement | null

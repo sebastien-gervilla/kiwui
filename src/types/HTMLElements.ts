@@ -121,7 +121,7 @@ export interface InputHTMLAttributes extends HTMLAttributes {
     src?: string | undefined;
     step?: number | string | undefined;
     type?: HTMLInputTypeAttribute | undefined;
-    value?: string | ReadonlyArray<string> | number | undefined;
+    value?: string | number | undefined; // Could also be ReadonlyArray<string>
     width?: number | string | undefined;
 
     // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
