@@ -31,7 +31,7 @@ export interface SageHTML {
 
 export type Key = string | number;
 
-export type SageNode = SageElement | string | number | boolean | null | undefined;
+export type SageNode = SageElement | string | number | boolean | null | undefined | SageNode[];
 
 export interface DOMAttributes {
     onClick?: () => void | undefined
