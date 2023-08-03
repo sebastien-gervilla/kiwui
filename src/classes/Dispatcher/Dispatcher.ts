@@ -19,5 +19,5 @@ type Hook = {
     useState<T>(initialState: (() => T) | T): [T, Setter<StateGetter<T>>],
 }
 
-type Setter<Getter> = (getter: Getter) => void;
-type StateGetter<T> = ((previousValue: T) => T) | T;
+type Setter<Getter> = (newState: Getter) => void;
+type StateGetter<T> = ((currentState: T) => T) | T;
