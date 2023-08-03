@@ -1,4 +1,8 @@
+export { Dispatcher } from './classes';
+
 export { createElement } from './core';
+
+export { useState } from './hooks';
 
 export {
     type SageElement,
