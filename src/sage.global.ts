@@ -16,7 +16,7 @@ declare global {
         interface ElementAttributesProperty { props: {}; }
         interface ElementChildrenAttribute { children: {}; }
 
-        interface IntrinsicAttributes { key: Key | null }
+        interface IntrinsicAttributes { key?: Key | null | undefined; }
         interface IntrinsicClassAttributes<T extends HTMLElement> extends HTMLAttributes { }
 
         interface IntrinsicElements {
