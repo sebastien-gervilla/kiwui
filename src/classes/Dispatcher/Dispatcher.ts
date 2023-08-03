@@ -1,7 +1,16 @@
 export default class Dispatcher {
     static _current: Hook;
 
-    static get current() { return Dispatcher._current }
+    static get current() {
+        const current = Dispatcher._current;
+        if (!current) throw new Error(
+            "Invalid hook call.\n" +
+            "Hooks can only be called in the body of function Components."
+        );
+
+        return Dispatcher._current
+    }
+
     static set current(hook: Hook) { Dispatcher._current = hook }
 }
 
@@ -12,22 +21,3 @@ type Hook = {
 
 type Setter<Getter> = (getter: Getter) => void;
 type StateGetter<T> = ((previousValue: T) => T) | T;
-
-// export default class Dispatcher {
-
-//     private static _instance: Dispatcher;
-
-//     private _current!: Hook;
-
-//     private constructor() {
-//         if (!Dispatcher._instance)
-//             Dispatcher._instance = new Dispatcher();
-
-//         return Dispatcher._instance;
-//     }
-
-//     static get instance() { return Dispatcher._instance }
-
-//     get current() { return Dispatcher.instance._current }
-//     set current(hook: Hook) { Dispatcher.instance._current = hook }
-// }
