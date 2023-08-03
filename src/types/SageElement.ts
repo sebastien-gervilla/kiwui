@@ -1,11 +1,15 @@
 export type SageElement = {
     key: Key | null
-    tag: keyof SageHTML
-    props: HTMLAttributes | null | undefined
+    type: keyof SageHTML | FunctionComponent
+    props: HTMLAttributes | null | undefined | {}
 }
 
 export type HTMLElement = {
 
+}
+
+export interface SageAttributes {
+    key?: Key | null | undefined;
 }
 
 export interface HTMLAttributes extends DOMAttributes {
@@ -34,3 +38,5 @@ export interface DOMAttributes {
 }
 
 export type JSXElement<Attributes extends HTMLAttributes> = Attributes;
+
+export type FunctionComponent<P = {}> = (props: P) => SageElement | null

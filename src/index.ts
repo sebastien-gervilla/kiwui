@@ -1,7 +1,10 @@
+export { Dispatcher } from './classes';
+
 export { createElement } from './core';
 
+export { useState } from './hooks';
+
 export {
-    // SageElement
     type SageElement,
     type HTMLElement,
     type Key,
@@ -10,6 +13,8 @@ export {
     DOMAttributes,
     HTMLAttributes,
     SageHTML,
+    FunctionComponent,
+    SageAttributes,
 
     // HTMLElements
     AnchorHTMLAttributes
