@@ -1,16 +1,4 @@
-export {
-    type SageElement,
-    type HTMLElement,
-    type Key,
-    type SageNode,
-    type JSXElement,
-    DOMAttributes,
-    HTMLAttributes,
-    SageHTML,
-    FunctionComponent,
-    SageAttributes,
-} from './SageElement';
-
-export * from './HTMLElements';
-
+export * from './sage';
+export * from './attributes';
 export * from './events';
+// TODO: Import specifics from events (abstraction)
