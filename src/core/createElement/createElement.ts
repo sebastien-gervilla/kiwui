@@ -7,12 +7,12 @@ interface createElementImplementations {
         type: keyof SageHTML, 
         props?: HTMLAttributes | null | undefined, 
         ...children: SageNode[]
-    ): SageElement
+    ): SageElement<keyof SageHTML>
     <Props extends {}>(
         type: FunctionComponent<Props>,
         props?: Props & SageAttributes,
         ...children: SageNode[]
-    ): SageElement
+    ): SageElement<FunctionComponent>
 }
 
 export const createElement: createElementImplementations = (
