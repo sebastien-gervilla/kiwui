@@ -2,14 +2,11 @@ import {
     HTMLAttributes, 
     Key, 
     SageElement, 
-    JSXElement, 
-    HTMLElement,
-
-    // HTML Elements
-    AnchorHTMLAttributes
+    JSXElement
 } from '.';
 
 import { 
+    AnchorHTMLAttributes,
     ButtonHTMLAttributes, 
     FormHTMLAttributes, 
     ImgHTMLAttributes, 
@@ -28,7 +25,7 @@ import {
     TextareaHTMLAttributes, 
     ThHTMLAttributes, 
     VideoHTMLAttributes
-} from './types/HTMLElements';
+} from './types/attributes';
 
 declare global {
     namespace JSX {
@@ -74,7 +71,7 @@ declare global {
             pre: JSXElement<HTMLAttributes, HTMLPreElement>
             script: JSXElement<ScriptHTMLAttributes, HTMLScriptElement>
             section: JSXElement<HTMLAttributes, HTMLElement>
-            select: JSXElement<SelectHTMLAttributes, HTMLElement>
+            select: JSXElement<SelectHTMLAttributes, HTMLSelectElement>
             span: JSXElement<HTMLAttributes, HTMLSpanElement>
             strong: JSXElement<HTMLAttributes, HTMLElement>
             style: JSXElement<StyleHTMLAttributes, HTMLStyleElement>
