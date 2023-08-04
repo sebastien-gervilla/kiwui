@@ -153,6 +153,14 @@ type HTMLInputTypeAttribute =
     | (string & {});
 
 // =======================================
+// =============    label    =============
+// =======================================
+export interface LabelHTMLAttributes extends HTMLAttributes {
+    form?: string | undefined;
+    htmlFor?: string | undefined;
+}
+
+// =======================================
 // ==============    li    ===============
 // =======================================
 export interface LiHTMLAttributes extends HTMLAttributes {
@@ -176,6 +184,17 @@ export interface LinkHTMLAttributes extends HTMLAttributes {
     sizes?: string | undefined;
     type?: string | undefined;
     charSet?: string | undefined;
+}
+
+// =======================================
+// =============    meta    ==============
+// =======================================
+export interface MetaHTMLAttributes extends HTMLAttributes {
+    charSet?: string | undefined;
+    content?: string | undefined;
+    httpEquiv?: string | undefined;
+    name?: string | undefined;
+    media?: string | undefined;
 }
 
 // =======================================
@@ -238,6 +257,36 @@ export interface StyleHTMLAttributes extends HTMLAttributes {
 }
 
 // =======================================
+// =============    table    =============
+// =======================================
+export interface TableHTMLAttributes extends HTMLAttributes {
+    align?: "left" | "center" | "right" | undefined;
+    bgcolor?: string | undefined;
+    border?: number | undefined;
+    cellPadding?: number | string | undefined;
+    cellSpacing?: number | string | undefined;
+    frame?: boolean | undefined;
+    rules?: "none" | "groups" | "rows" | "columns" | "all" | undefined;
+    summary?: string | undefined;
+    width?: number | string | undefined;
+}
+
+// =======================================
+// ===============    td    ==============
+// =======================================
+export interface TdHTMLAttributes extends HTMLAttributes {
+    align?: "left" | "center" | "right" | "justify" | "char" | undefined;
+    colSpan?: number | undefined;
+    headers?: string | undefined;
+    rowSpan?: number | undefined;
+    scope?: string | undefined;
+    abbr?: string | undefined;
+    height?: number | string | undefined;
+    width?: number | string | undefined;
+    valign?: "top" | "middle" | "bottom" | "baseline" | undefined;
+}
+
+// =======================================
 // ============    textarea    ===========
 // =======================================
 export interface TextareaHTMLAttributes extends HTMLAttributes {
@@ -257,4 +306,48 @@ export interface TextareaHTMLAttributes extends HTMLAttributes {
     wrap?: string | undefined;
 
     // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
+}
+
+// =======================================
+// ===============    th    ==============
+// =======================================
+export interface ThHTMLAttributes extends HTMLAttributes {
+    align?: "left" | "center" | "right" | "justify" | "char" | undefined;
+    colSpan?: number | undefined;
+    headers?: string | undefined;
+    rowSpan?: number | undefined;
+    scope?: string | undefined;
+    abbr?: string | undefined;
+}
+
+// =======================================
+// =============    video    =============
+// =======================================
+export interface VideoHTMLAttributes extends MediaHTMLAttributes {
+    height?: number | string | undefined;
+    playsInline?: boolean | undefined;
+    poster?: string | undefined;
+    width?: number | string | undefined;
+    disablePictureInPicture?: boolean | undefined;
+    disableRemotePlayback?: boolean | undefined;
+}
+
+//
+// Base Attributes
+// ==============================================================================
+
+// =======================================
+// =============    media    =============
+// =======================================
+interface MediaHTMLAttributes extends HTMLAttributes {
+    autoPlay?: boolean | undefined;
+    controls?: boolean | undefined;
+    controlsList?: string | undefined;
+    crossOrigin?: "anonymous" | "use-credentials" | "" | undefined;
+    loop?: boolean | undefined;
+    mediaGroup?: string | undefined;
+    muted?: boolean | undefined;
+    playsInline?: boolean | undefined;
+    preload?: string | undefined;
+    src?: string | undefined;
 }
