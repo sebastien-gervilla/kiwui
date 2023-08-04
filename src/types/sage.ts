@@ -1,8 +1,8 @@
-import { HTMLAttributes } from "."
+import { HTMLAttributes, SageHTML } from "."
 
 export type Key = string | number;
 
-export type SageElement<Type extends (keyof SageHTML | FunctionComponent) = keyof SageHTML> = {
+export type SageElement<Type extends (keyof SageHTML | FunctionComponent) = any> = {
     key: Key | null
     type: Type
     props: Type extends FunctionComponent<infer Props> ? Props : HTMLAttributes
@@ -21,10 +21,3 @@ export type JSXElement<
 
 export type FunctionComponent<P extends {} = SageAttributes> = (props: P & SageAttributes) => 
     SageElement<FunctionComponent> | null
-
-// This seems to be useful only as "keyof SageHTML"
-export interface SageHTML {
-    a: HTMLElement
-    div: HTMLElement
-    p: HTMLElement
-}
