@@ -41,6 +41,6 @@ export interface DOMAttributes {
     onClick?: () => void | undefined
 }
 
-export type JSXElement<Attributes extends HTMLAttributes> = Attributes & SageEvents<Attributes>;
+export type JSXElement<Attributes extends HTMLAttributes, Element extends HTMLElement = HTMLElement> = Attributes & SageEvents<Element>;
 
 export type FunctionComponent<P = {}> = (props: P) => SageElement | null

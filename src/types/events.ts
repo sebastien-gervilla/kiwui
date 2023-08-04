@@ -1,6 +1,6 @@
-import { HTMLAttributes } from "./SageElement";
+import { HTMLElement } from "./SageElement";
 
-export interface SageEvents<T extends HTMLAttributes> {
+export interface SageEvents<T extends HTMLElement> {
     // Form Events
     onChange?: FormEventHandler<T> | undefined;
     onChangeCapture?: FormEventHandler<T> | undefined;
@@ -20,16 +20,16 @@ export interface SageEvents<T extends HTMLAttributes> {
 // Event Handlers
 // ======================================================================
 
-type EventHandler<Event extends SageEvent<HTMLAttributes>> = (event: Event) => void
+type EventHandler<Event extends SageEvent<HTMLElement>> = (event: Event) => void
 
-type FormEventHandler<T extends HTMLAttributes> = EventHandler<FormEvent<T>>;
+type FormEventHandler<T extends HTMLElement> = EventHandler<FormEvent<T>>;
 
 //
 // From Events
 // ======================================================================
 
 interface SageEvent<
-    Target extends HTMLAttributes
+    Target extends HTMLElement
 > {
     nativeEvent: Event;
     currentTarget: Target;
@@ -48,4 +48,4 @@ interface SageEvent<
     type: string;
 }
 
-export interface FormEvent<T extends HTMLAttributes> extends SageEvent<T> { }
+export interface FormEvent<T extends HTMLElement> extends SageEvent<T> { }
