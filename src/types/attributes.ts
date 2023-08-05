@@ -1,4 +1,4 @@
-import { HTMLAttributes } from '.';
+import { ChangeEventHandler, Key, SageEvents, SageNode } from '.';
 
 // =======================================
 // =============      a      =============
@@ -90,7 +90,7 @@ export interface ImgHTMLAttributes extends HTMLAttributes {
 // =======================================
 // =============    input    =============
 // =======================================
-export interface InputHTMLAttributes extends HTMLAttributes {
+export interface InputHTMLAttributes extends HTMLAttributes<HTMLInputElement> {
     accept?: string | undefined;
     alt?: string | undefined;
     autoComplete?: string | undefined;
@@ -121,10 +121,10 @@ export interface InputHTMLAttributes extends HTMLAttributes {
     src?: string | undefined;
     step?: number | string | undefined;
     type?: HTMLInputTypeAttribute | undefined;
-    value?: string | ReadonlyArray<string> | number | undefined;
+    value?: string | number | undefined; // Could also be ReadonlyArray<string>
     width?: number | string | undefined;
 
-    // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
+    onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 type HTMLInputTypeAttribute =
@@ -235,7 +235,7 @@ export interface ScriptHTMLAttributes extends HTMLAttributes {
 // =======================================
 // ============    select    =============
 // =======================================
-export interface SelectHTMLAttributes extends HTMLAttributes {
+export interface SelectHTMLAttributes extends HTMLAttributes<HTMLSelectElement> {
     autoComplete?: string | undefined;
     disabled?: boolean | undefined;
     form?: string | undefined;
@@ -244,7 +244,8 @@ export interface SelectHTMLAttributes extends HTMLAttributes {
     required?: boolean | undefined;
     size?: number | undefined;
     value?: string | ReadonlyArray<string> | number | undefined;
-    // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
+
+    onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
 }
 
 // =======================================
@@ -289,7 +290,7 @@ export interface TdHTMLAttributes extends HTMLAttributes {
 // =======================================
 // ============    textarea    ===========
 // =======================================
-export interface TextareaHTMLAttributes extends HTMLAttributes {
+export interface TextareaHTMLAttributes extends HTMLAttributes<HTMLTextAreaElement> {
     autoComplete?: string | undefined;
     cols?: number | undefined;
     dirName?: string | undefined;
@@ -305,7 +306,7 @@ export interface TextareaHTMLAttributes extends HTMLAttributes {
     value?: string | ReadonlyArray<string> | number | undefined;
     wrap?: string | undefined;
 
-    // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
+    onChange?: ChangeEventHandler<HTMLTextAreaElement> | undefined;
 }
 
 // =======================================
@@ -335,6 +336,17 @@ export interface VideoHTMLAttributes extends MediaHTMLAttributes {
 //
 // Base Attributes
 // ==============================================================================
+
+export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> extends SageEvents<Element> {
+    // Sage attributes
+    key?: Key | null | undefined;
+
+    // Standard HTML Attributes
+    id?: string | undefined
+    className?: string | undefined
+
+    children?: SageNode[] | SageNode | undefined
+}
 
 // =======================================
 // =============    media    =============
