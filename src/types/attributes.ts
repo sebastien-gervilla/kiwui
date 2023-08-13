@@ -345,7 +345,7 @@ export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> exten
     id?: string | undefined
     className?: string | undefined
 
-    children?: SageNode[] | SageNode | undefined
+    children?: SageNode | undefined
 }
 
 // =======================================
