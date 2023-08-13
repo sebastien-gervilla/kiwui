@@ -1,19 +1,9 @@
+export { Dispatcher } from './classes';
+
 export { createElement } from './core';
 
-export {
-    type SageElement,
-    type HTMLElement,
-    type Key,
-    type SageNode,
-    type JSXElement,
-    DOMAttributes,
-    HTMLAttributes,
-    SageHTML,
-    FunctionComponent,
-    SageAttributes,
+export { useState } from './hooks';
 
-    // HTMLElements
-    AnchorHTMLAttributes
-} from './types';
+export * from './types';
 
 import './sage.global';
