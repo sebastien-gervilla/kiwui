@@ -1,4 +1,5 @@
 import { ChangeEventHandler, Key, SageEvents, SageNode } from '.';
+import { CSSProperties } from './styles';
 
 // =======================================
 // =============      a      =============
@@ -344,6 +345,9 @@ export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> exten
     // Standard HTML Attributes
     id?: string | undefined
     className?: string | undefined
+
+    // CSS 
+    style? : CSSProperties | undefined
 
     children?: SageNode | undefined
 }
