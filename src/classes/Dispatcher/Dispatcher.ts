@@ -1,5 +1,7 @@
+import { Hooks } from "../../types";
+
 export default class Dispatcher {
-    static _current: Hook;
+    static _current: Hooks;
 
     static get current() {
         const current = Dispatcher._current;
@@ -11,13 +13,5 @@ export default class Dispatcher {
         return Dispatcher._current
     }
 
-    static set current(hook: Hook) { Dispatcher._current = hook }
+    static set current(hooks: Hooks) { Dispatcher._current = hooks }
 }
-
-// Relocate ?
-type Hook = {
-    useState<T>(initialState: (() => T) | T): [T, Setter<StateGetter<T>>],
-}
-
-type Setter<Getter> = (newState: Getter) => void;
-type StateGetter<T> = ((currentState: T) => T) | T;
