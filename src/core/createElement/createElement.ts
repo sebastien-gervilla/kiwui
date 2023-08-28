@@ -1,4 +1,4 @@
-import { HTMLAttributes, KiwuiElement, KiwuiHTML, KiwuiNode, FunctionComponent, KiwuiAttributes } from "../../types";
+import { HTMLAttributes, KiwuiElement, KiwuiHTML, FunctionComponent, KiwuiAttributes, SingleKiwuiNode } from "../../types";
 
 // Functional Component
 
@@ -6,12 +6,12 @@ interface createElementImplementations {
     (
         type: keyof KiwuiHTML, 
         props?: HTMLAttributes | null | undefined, 
-        ...children: KiwuiNode[]
+        ...children: SingleKiwuiNode[]
     ): KiwuiElement<keyof KiwuiHTML>
     <Props extends {}>(
         type: FunctionComponent<Props>,
         props?: Props & KiwuiAttributes,
-        ...children: KiwuiNode[]
+        ...children: SingleKiwuiNode[]
     ): KiwuiElement<FunctionComponent>
 }
 
@@ -25,7 +25,7 @@ export const createElement: createElementImplementations = (
         type,
         props: {
             ...props,
-            children
+            children: children.flat(Infinity)
         }
     };
 }

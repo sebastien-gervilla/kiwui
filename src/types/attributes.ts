@@ -349,7 +349,7 @@ export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> exten
     // CSS 
     style? : CSSProperties | undefined
 
-    children?: KiwuiNode[] | KiwuiNode | undefined
+    children?: KiwuiNode | undefined
 }
 
 // =======================================

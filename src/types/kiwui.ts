@@ -5,14 +5,16 @@ export type Key = string | number;
 export type KiwuiElement<Type extends (keyof KiwuiHTML | FunctionComponent) = any> = {
     key: Key | null
     type: Type
-    props: Type extends FunctionComponent<infer Props> ? Props : HTMLAttributes
+    props: Type extends FunctionComponent<infer Props> ? Props : ({ children?: SingleKiwuiNode[] } & Omit<HTMLAttributes, 'children'>)
 }
 
 export interface KiwuiAttributes {
     key?: Key | null | undefined;
 }
 
-export type KiwuiNode = KiwuiElement | string | number | boolean | null | undefined | KiwuiNode[];
+export type KiwuiNode = SingleKiwuiNode | KiwuiNode[];
+
+export type SingleKiwuiNode = KiwuiElement | string | number | boolean | null | undefined;
 
 export type JSXElement<
     Attributes extends HTMLAttributes<Element>, 
