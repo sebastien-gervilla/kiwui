@@ -1,4 +1,4 @@
-import { JSXElement } from './sage';
+import { JSXElement } from './kiwui';
 
 import {
     HTMLAttributes,
@@ -23,7 +23,7 @@ import {
     VideoHTMLAttributes
 } from './attributes';
 
-export interface SageHTML {
+export interface KiwuiHTML {
     a: JSXElement<AnchorHTMLAttributes, HTMLAnchorElement>
     article: JSXElement<HTMLAttributes, HTMLElement>
     b: JSXElement<HTMLAttributes, HTMLElement>;

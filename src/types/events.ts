@@ -1,4 +1,4 @@
-export interface SageEvents<Target extends HTMLElement> {
+export interface KiwuiEvents<Target extends HTMLElement> {
     // MouseEvents
     onAuxClick?: MouseEventHandler<Target> | undefined;
     onAuxClickCapture?: MouseEventHandler<Target> | undefined;
@@ -82,10 +82,10 @@ export interface SageEvents<Target extends HTMLElement> {
 // Event Handlers
 // ======================================================================
 
-type EventHandler<Event extends SageEvent<Element>> = (event: Event) => void
+type EventHandler<Event extends KiwuiEvent<Element>> = (event: Event) => void
 
-// TODO: Some events must be handled by Sage itself
-type ReactEventHandler<Target extends Element> = EventHandler<SageEvent<Target>>;
+// TODO: Some events must be handled by Kiwui itself
+type ReactEventHandler<Target extends Element> = EventHandler<KiwuiEvent<Target>>;
 
 type MouseEventHandler<Target extends Element> = EventHandler<MouseEvent<Target>>;
 type DragEventHandler<Target extends Element> = EventHandler<DragEvent<Target>>;
@@ -101,9 +101,9 @@ export type ChangeEventHandler<Target extends Element> = EventHandler<ChangeEven
 // Events
 // ======================================================================
 
-// TODO: "Event" is for the "nativeEvent", which should be added when processing events in Sage
+// TODO: "Event" is for the "nativeEvent", which should be added when processing events in Kiwui
 // TODO: "target" should extend EventTarget by default, which is a pain to dev really
-interface SageEvent<
+interface KiwuiEvent<
     CurrentTarget extends Element,
     NativeEvent = any,
     Target = any
@@ -128,7 +128,7 @@ interface SageEvent<
 interface UIEvent<
     Target extends Element = Element, 
     Event = NativeEvent
-> extends SageEvent<Target, Event> {
+> extends KiwuiEvent<Target, Event> {
     detail: number;
     view: Window;
 }
@@ -159,7 +159,7 @@ export interface DragEvent<Target extends Element> extends MouseEvent<Target, Na
     dataTransfer: DataTransfer;
 }
 
-export interface FormEvent<Target extends Element> extends SageEvent<Target> { }
+export interface FormEvent<Target extends Element> extends KiwuiEvent<Target> { }
 
 export interface KeyboardEvent<Target extends Element> extends UIEvent<Target, NativeKeyboardEvent> {
     altKey: boolean;
@@ -174,18 +174,18 @@ export interface KeyboardEvent<Target extends Element> extends UIEvent<Target, N
     shiftKey: boolean;
 }
 
-export interface ClipboardEvent<Target extends Element> extends SageEvent<Target, NativeClipboardEvent> {
+export interface ClipboardEvent<Target extends Element> extends KiwuiEvent<Target, NativeClipboardEvent> {
     clipboardData: DataTransfer;
 }
 
-export interface FocusEvent<Target extends Element, RelatedTarget = Element> extends SageEvent<Target, NativeFocusEvent> {
+export interface FocusEvent<Target extends Element, RelatedTarget = Element> extends KiwuiEvent<Target, NativeFocusEvent> {
     relatedTarget: (EventTarget & RelatedTarget) | null;
     target: EventTarget & Target;
 }
 
 // Element specifics
 
-export interface ChangeEvent<Target extends Element> extends SageEvent<Target> {
+export interface ChangeEvent<Target extends Element> extends KiwuiEvent<Target> {
     target: EventTarget & Target;
 }
 

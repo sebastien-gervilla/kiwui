@@ -1,4 +1,4 @@
-export * from './sage';
+export * from './kiwui';
 export * from './attributes';
 export * from './events';
 export * from './elements';

@@ -1,4 +1,4 @@
-import { ChangeEventHandler, Key, SageEvents, SageNode } from '.';
+import { ChangeEventHandler, Key, KiwuiEvents, KiwuiNode } from '.';
 import { CSSProperties } from './styles';
 
 // =======================================
@@ -338,8 +338,8 @@ export interface VideoHTMLAttributes extends MediaHTMLAttributes {
 // Base Attributes
 // ==============================================================================
 
-export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> extends SageEvents<Element> {
-    // Sage attributes
+export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> extends KiwuiEvents<Element> {
+    // Kiwui attributes
     key?: Key | null | undefined;
 
     // Standard HTML Attributes
@@ -349,7 +349,7 @@ export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> exten
     // CSS 
     style? : CSSProperties | undefined
 
-    children?: SageNode | undefined
+    children?: KiwuiNode | undefined
 }
 
 // =======================================
