@@ -2,36 +2,45 @@
   "name": "kiwui",
   "version": "0.1.0",
   "description": "A JavaScript UI Framework.",
+  "author": "Sébastien Gervilla (sebastien-gervilla)",
+  "license": "ISC",
+  "keywords": [
+    "kiwui",
+    "javascript",
+    "typescript",
+    "front-end",
+    "ui",
+    "framework"
+  ],
+
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+
   "scripts": {
     "build": "tsc"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sebastien-gervilla/kiwui.git"
+
+  "dependencies": {
+    "csstype": "^3.1.2"
   },
-  "keywords": [
-    "javascript",
-    "typescript"
-  ],
-  "author": "Sébastien Gervilla (sebastien-gervilla)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sebastien-gervilla/kiwui/issues"
-  },
-  "homepage": "https://github.com/sebastien-gervilla/kiwui#readme",
   "devDependencies": {
     "@types/node": "^20.4.2",
     "typescript": "^5.1.6"
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "dependencies": {
-    "csstype": "^3.1.2"
+
+  "homepage": "https://github.com/sebastien-gervilla/kiwui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastien-gervilla/kiwui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastien-gervilla/kiwui/issues"
   }
 }
