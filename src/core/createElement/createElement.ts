@@ -1,4 +1,4 @@
-import { HTMLAttributes, SageElement, SageHTML, SageNode, FunctionComponent, SageAttributes, SageElementChildren } from "../../types";
+import { HTMLAttributes, SageElement, SageHTML, FunctionComponent, SageAttributes, SingleSageNode } from "../../types";
 
 // Functional Component
 
@@ -6,12 +6,12 @@ interface createElementImplementations {
     (
         type: keyof SageHTML, 
         props?: HTMLAttributes | null | undefined, 
-        ...children: SageElementChildren[]
+        ...children: SingleSageNode[]
     ): SageElement<keyof SageHTML>
     <Props extends {}>(
         type: FunctionComponent<Props>,
         props?: Props & SageAttributes,
-        ...children: SageElementChildren[]
+        ...children: SingleSageNode[]
     ): SageElement<FunctionComponent>
 }
 
