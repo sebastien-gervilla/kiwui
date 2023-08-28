@@ -6,4 +6,4 @@ export { useState } from './hooks';
 
 export * from './types';
 
-import './sage.global';
+import './kiwui.global';

@@ -1,7 +1,7 @@
 {
-  "name": "sage",
-  "version": "1.0.0",
-  "description": "A javascript library",
+  "name": "kiwui",
+  "version": "0.1.0",
+  "description": "A JavaScript UI Framework.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -11,22 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebastien-gervilla/sage.git"
+    "url": "git+https://github.com/sebastien-gervilla/kiwui.git"
   },
   "keywords": [
     "javascript",
     "typescript"
   ],
   "author": "Sébastien Gervilla (sebastien-gervilla)",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sebastien-gervilla/sage/issues"
+    "url": "https://github.com/sebastien-gervilla/kiwui/issues"
   },
-  "homepage": "https://github.com/sebastien-gervilla/sage#readme",
+  "homepage": "https://github.com/sebastien-gervilla/kiwui#readme",
   "devDependencies": {
     "@types/node": "^20.4.2",
-    "concurrently": "^8.2.0",
-    "nodemon": "^3.0.1",
     "typescript": "^5.1.6"
   },
   "files": [
