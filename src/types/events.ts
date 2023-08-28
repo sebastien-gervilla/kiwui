@@ -106,8 +106,8 @@ export type ChangeEventHandler<Target extends Element> = EventHandler<ChangeEven
 interface KiwuiEvent<
     CurrentTarget extends Element,
     NativeEvent = any,
-    Target = any
-> {
+    Target extends EventTarget = any
+> extends Event {
     nativeEvent: NativeEvent;
     currentTarget: CurrentTarget & EventTarget;
     target: Target;
