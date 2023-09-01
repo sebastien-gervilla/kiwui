@@ -1,4 +1,5 @@
-import { HTMLAttributes } from '.';
+import { ChangeEventHandler, Key, KiwuiEvents, KiwuiNode } from '.';
+import { CSSProperties } from './styles';
 
 // =======================================
 // =============      a      =============
@@ -90,7 +91,7 @@ export interface ImgHTMLAttributes extends HTMLAttributes {
 // =======================================
 // =============    input    =============
 // =======================================
-export interface InputHTMLAttributes extends HTMLAttributes {
+export interface InputHTMLAttributes extends HTMLAttributes<HTMLInputElement> {
     accept?: string | undefined;
     alt?: string | undefined;
     autoComplete?: string | undefined;
@@ -121,10 +122,10 @@ export interface InputHTMLAttributes extends HTMLAttributes {
     src?: string | undefined;
     step?: number | string | undefined;
     type?: HTMLInputTypeAttribute | undefined;
-    value?: string | ReadonlyArray<string> | number | undefined;
+    value?: string | number | undefined; // Could also be ReadonlyArray<string>
     width?: number | string | undefined;
 
-    // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
+    onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 type HTMLInputTypeAttribute =
@@ -153,6 +154,14 @@ type HTMLInputTypeAttribute =
     | (string & {});
 
 // =======================================
+// =============    label    =============
+// =======================================
+export interface LabelHTMLAttributes extends HTMLAttributes {
+    form?: string | undefined;
+    htmlFor?: string | undefined;
+}
+
+// =======================================
 // ==============    li    ===============
 // =======================================
 export interface LiHTMLAttributes extends HTMLAttributes {
@@ -176,6 +185,17 @@ export interface LinkHTMLAttributes extends HTMLAttributes {
     sizes?: string | undefined;
     type?: string | undefined;
     charSet?: string | undefined;
+}
+
+// =======================================
+// =============    meta    ==============
+// =======================================
+export interface MetaHTMLAttributes extends HTMLAttributes {
+    charSet?: string | undefined;
+    content?: string | undefined;
+    httpEquiv?: string | undefined;
+    name?: string | undefined;
+    media?: string | undefined;
 }
 
 // =======================================
@@ -216,7 +236,7 @@ export interface ScriptHTMLAttributes extends HTMLAttributes {
 // =======================================
 // ============    select    =============
 // =======================================
-export interface SelectHTMLAttributes extends HTMLAttributes {
+export interface SelectHTMLAttributes extends HTMLAttributes<HTMLSelectElement> {
     autoComplete?: string | undefined;
     disabled?: boolean | undefined;
     form?: string | undefined;
@@ -225,7 +245,8 @@ export interface SelectHTMLAttributes extends HTMLAttributes {
     required?: boolean | undefined;
     size?: number | undefined;
     value?: string | ReadonlyArray<string> | number | undefined;
-    // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
+
+    onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
 }
 
 // =======================================
@@ -238,9 +259,39 @@ export interface StyleHTMLAttributes extends HTMLAttributes {
 }
 
 // =======================================
+// =============    table    =============
+// =======================================
+export interface TableHTMLAttributes extends HTMLAttributes {
+    align?: "left" | "center" | "right" | undefined;
+    bgcolor?: string | undefined;
+    border?: number | undefined;
+    cellPadding?: number | string | undefined;
+    cellSpacing?: number | string | undefined;
+    frame?: boolean | undefined;
+    rules?: "none" | "groups" | "rows" | "columns" | "all" | undefined;
+    summary?: string | undefined;
+    width?: number | string | undefined;
+}
+
+// =======================================
+// ===============    td    ==============
+// =======================================
+export interface TdHTMLAttributes extends HTMLAttributes {
+    align?: "left" | "center" | "right" | "justify" | "char" | undefined;
+    colSpan?: number | undefined;
+    headers?: string | undefined;
+    rowSpan?: number | undefined;
+    scope?: string | undefined;
+    abbr?: string | undefined;
+    height?: number | string | undefined;
+    width?: number | string | undefined;
+    valign?: "top" | "middle" | "bottom" | "baseline" | undefined;
+}
+
+// =======================================
 // ============    textarea    ===========
 // =======================================
-export interface TextareaHTMLAttributes extends HTMLAttributes {
+export interface TextareaHTMLAttributes extends HTMLAttributes<HTMLTextAreaElement> {
     autoComplete?: string | undefined;
     cols?: number | undefined;
     dirName?: string | undefined;
@@ -256,5 +307,63 @@ export interface TextareaHTMLAttributes extends HTMLAttributes {
     value?: string | ReadonlyArray<string> | number | undefined;
     wrap?: string | undefined;
 
-    // onChange?: ChangeEventHandler<T> | undefined; TODO: handlers
+    onChange?: ChangeEventHandler<HTMLTextAreaElement> | undefined;
+}
+
+// =======================================
+// ===============    th    ==============
+// =======================================
+export interface ThHTMLAttributes extends HTMLAttributes {
+    align?: "left" | "center" | "right" | "justify" | "char" | undefined;
+    colSpan?: number | undefined;
+    headers?: string | undefined;
+    rowSpan?: number | undefined;
+    scope?: string | undefined;
+    abbr?: string | undefined;
+}
+
+// =======================================
+// =============    video    =============
+// =======================================
+export interface VideoHTMLAttributes extends MediaHTMLAttributes {
+    height?: number | string | undefined;
+    playsInline?: boolean | undefined;
+    poster?: string | undefined;
+    width?: number | string | undefined;
+    disablePictureInPicture?: boolean | undefined;
+    disableRemotePlayback?: boolean | undefined;
+}
+
+//
+// Base Attributes
+// ==============================================================================
+
+export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> extends KiwuiEvents<Element> {
+    // Kiwui attributes
+    key?: Key | null | undefined;
+
+    // Standard HTML Attributes
+    id?: string | undefined
+    className?: string | undefined
+
+    // CSS 
+    style? : CSSProperties | undefined
+
+    children?: KiwuiNode | undefined
+}
+
+// =======================================
+// =============    media    =============
+// =======================================
+interface MediaHTMLAttributes extends HTMLAttributes {
+    autoPlay?: boolean | undefined;
+    controls?: boolean | undefined;
+    controlsList?: string | undefined;
+    crossOrigin?: "anonymous" | "use-credentials" | "" | undefined;
+    loop?: boolean | undefined;
+    mediaGroup?: string | undefined;
+    muted?: boolean | undefined;
+    playsInline?: boolean | undefined;
+    preload?: string | undefined;
+    src?: string | undefined;
 }

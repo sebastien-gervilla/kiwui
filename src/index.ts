@@ -1,18 +1,9 @@
+export { Dispatcher } from './classes';
+
 export { createElement } from './core';
 
-export {
-    // SageElement
-    type SageElement,
-    type HTMLElement,
-    type Key,
-    type SageNode,
-    type JSXElement,
-    DOMAttributes,
-    HTMLAttributes,
-    SageHTML,
+export { useState } from './hooks';
 
-    // HTMLElements
-    AnchorHTMLAttributes
-} from './types';
+export * from './types';
 
-import './sage.global';
+import './kiwui.global';

@@ -1,16 +1,31 @@
-import { HTMLAttributes, SageElement, SageHTML, SageNode } from "../../types";
+import { HTMLAttributes, KiwuiElement, KiwuiHTML, FunctionComponent, KiwuiAttributes, SingleKiwuiNode } from "../../types";
 
-export const createElement = (
-        tag: keyof SageHTML, 
+// Functional Component
+
+interface createElementImplementations {
+    (
+        type: keyof KiwuiHTML, 
         props?: HTMLAttributes | null | undefined, 
-        ...children: SageNode[]
-    ): SageElement => {
+        ...children: SingleKiwuiNode[]
+    ): KiwuiElement<keyof KiwuiHTML>
+    <Props extends {}>(
+        type: FunctionComponent<Props>,
+        props?: Props & KiwuiAttributes,
+        ...children: SingleKiwuiNode[]
+    ): KiwuiElement<FunctionComponent>
+}
+
+export const createElement: createElementImplementations = (
+        type: any,
+        props?: any,
+        ...children: any
+    ) => {
     return {
         key: props?.key || null,
-        tag,
+        type,
         props: {
             ...props,
-            children
+            children: children.flat(Infinity)
         }
     };
 }
