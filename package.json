@@ -1,26 +1,46 @@
 {
-  "name": "projet-reactos",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "npx tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sebastien-gervilla/projet-reactos.git"
-  },
-  "keywords": [],
-  "author": "",
+  "name": "kiwui",
+  "version": "0.1.0",
+  "description": "A JavaScript UI Framework.",
+  "author": "Sébastien Gervilla (sebastien-gervilla)",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sebastien-gervilla/projet-reactos/issues"
+  "keywords": [
+    "kiwui",
+    "javascript",
+    "typescript",
+    "front-end",
+    "ui",
+    "framework"
+  ],
+
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+
+  "scripts": {
+    "build": "tsc"
   },
-  "homepage": "https://github.com/sebastien-gervilla/projet-reactos#readme",
+
+  "dependencies": {
+    "csstype": "^3.1.2"
+  },
   "devDependencies": {
     "@types/node": "^20.4.2",
-    "concurrently": "^8.2.0",
-    "nodemon": "^3.0.1",
     "typescript": "^5.1.6"
+  },
+
+  "homepage": "https://github.com/sebastien-gervilla/kiwui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastien-gervilla/kiwui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastien-gervilla/kiwui/issues"
   }
 }
