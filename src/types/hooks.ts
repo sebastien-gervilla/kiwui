@@ -6,3 +6,8 @@ export type Hooks = {
 // States
 export type Setter<Getter> = (newState: Getter) => void;
 export type StateGetter<T> = ((currentState: T) => T) | T;
+
+// Effects
+export type Effect = () => Cleanup | void;
+export type Cleanup = () => void;
+export type Dependencies = ReadonlyArray<unknown>;
