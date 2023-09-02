@@ -73,9 +73,9 @@ export interface KiwuiHTML {
     // SVG
     svg: SVGAttributes<SVGSVGElement>;
 
-    animate: SVGAttributes<SVGElement>; // TODO: It is SVGAnimateElement but is not in TypeScript's lib.dom.d.ts for now.
+    animate: SVGAttributes<SVGAnimateElement>;
     animateMotion: SVGAttributes<SVGElement>;
-    animateTransform: SVGAttributes<SVGElement>; // TODO: It is SVGAnimateTransformElement but is not in TypeScript's lib.dom.d.ts for now.
+    animateTransform: SVGAttributes<SVGAnimateTransformElement>;
     circle: SVGAttributes<SVGCircleElement>;
     clipPath: SVGAttributes<SVGClipPathElement>;
     defs: SVGAttributes<SVGDefsElement>;
