@@ -1,6 +1,7 @@
 // Global
 export type Hooks = {
-    useState<T>(initialState: (() => T) | T): [T, Setter<StateGetter<T>>],
+    useState<T>(initialState: (() => T) | T): [T, Setter<StateGetter<T>>]
+    useEffect(effect: Effect, dependencies?: Dependencies): void
 }
 
 // States
