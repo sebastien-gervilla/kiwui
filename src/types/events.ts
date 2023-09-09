@@ -1,4 +1,4 @@
-export interface KiwuiEvents<Target extends HTMLElement> {
+export interface KiwuiEvents<Target extends HTMLElement | SVGElement> {
     // MouseEvents
     onAuxClick?: MouseEventHandler<Target> | undefined;
     onAuxClickCapture?: MouseEventHandler<Target> | undefined;
