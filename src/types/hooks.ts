@@ -3,7 +3,8 @@ export type Hooks = {
     useState<T>(initialState: (() => T) | T): [T, Setter<StateGetter<T>>]
     useEffect(effect: Effect, dependencies?: Dependencies): void
     useLayoutEffect(effect: Effect, dependencies?: Dependencies): void
-    useMemo<T>(getter: () => T, dependencies?: Dependencies): T
+    useMemo<T>(getter: () => T, dependencies: Dependencies): T
+    useCallback<T extends Function>(callback: T, dependencies: Dependencies): T
 }
 
 // States
