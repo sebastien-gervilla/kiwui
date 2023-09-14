@@ -1,6 +1,6 @@
 export { Dispatcher } from './classes';
 
-export { createElement } from './core';
+export { createElement, createContext } from './core';
 
 export { 
     useState, 
@@ -8,7 +8,8 @@ export {
     useLayoutEffect, 
     useMemo, 
     useCallback, 
-    useRef 
+    useRef, 
+    useContext
 } from './hooks';
 
 export * from './types';
