@@ -1,5 +1,3 @@
-// import { ContextConsumer } from "../../types";
-
 import { Context } from "../../types"
 
 export const createContext = <T>(initialValue: T): Context<T> => {
