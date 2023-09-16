@@ -2,10 +2,14 @@ import { HTMLAttributes, KiwuiHTML } from "."
 
 export type Key = string | number;
 
-export type KiwuiElement<Type extends (keyof KiwuiHTML | FunctionComponent) = any> = {
+export type KiwuiElement<Type extends (keyof KiwuiHTML | FunctionComponent<any> | ExoticComponent<any>) = any> = {
     key: Key | null
-    type: Type
-    props: Type extends FunctionComponent<infer Props> ? Props : ({ children?: SingleKiwuiNode[] } & Omit<HTMLAttributes, 'children'>)
+    type: Type extends ExoticComponent
+        ? Type & { exoticTag: string }
+        : Type
+    props: Type extends (FunctionComponent<infer Props> | ExoticComponent<infer Props>)
+        ? Props & KiwuiAttributes
+        : ({ children?: SingleKiwuiNode[] } & Omit<HTMLAttributes, 'children'>)
 }
 
 export interface KiwuiAttributes {
@@ -21,5 +25,10 @@ export type JSXElement<
     Element extends HTMLElement = HTMLElement
 > = Attributes;
 
-export type FunctionComponent<P extends {} = KiwuiAttributes> = (props: P & KiwuiAttributes) => 
-    KiwuiElement<FunctionComponent> | null
+export type FunctionComponent<P extends {} = KiwuiAttributes> = 
+    (props: P & KiwuiAttributes) => KiwuiElement<any> | null // TODO: KiwuiNode ?
+
+export type ExoticComponent<P extends {} = KiwuiAttributes> = {
+    (props: P & KiwuiAttributes): KiwuiElement<any> | null // TODO: KiwuiNode ?
+    exoticTag: string
+}
