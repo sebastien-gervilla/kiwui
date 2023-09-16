@@ -1,6 +1,6 @@
 export { Dispatcher } from './classes';
 
-export { createElement, createContext } from './core';
+export { createElement, createContext, memo } from './core';
 
 export { 
     useState, 

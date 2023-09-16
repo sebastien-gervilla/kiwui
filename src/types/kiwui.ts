@@ -28,7 +28,15 @@ export type JSXElement<
 export type FunctionComponent<P extends {} = KiwuiAttributes> = 
     (props: P & KiwuiAttributes) => KiwuiElement<any> | null // TODO: KiwuiNode ?
 
-export type ExoticComponent<P extends {} = KiwuiAttributes> = {
+export type ExoticComponent<P extends {} = KiwuiAttributes, T extends {} = {}> = {
     (props: P & KiwuiAttributes): KiwuiElement<any> | null // TODO: KiwuiNode ?
     exoticTag: string
-}
+} & T
+
+// Memo
+type ShouldUpdateCallback<Props extends {}> = 
+    (oldProps: Readonly<Props>, newProps: Readonly<Props>) => boolean
+
+export type MemoComponent<Props extends {} = {}> = ExoticComponent<Props, {
+    shouldUpdate?: ShouldUpdateCallback<Props>
+}>
