@@ -24,8 +24,8 @@ export const createElement: createElementImplementations = (
         key: props?.key || null,
         type,
         props: {
-            ...props,
-            children: children.flat(Infinity)
+            children: children.flat(Infinity),
+            ...props
         }
     };
 }
