@@ -26,10 +26,10 @@ export type JSXElement<
 > = Attributes;
 
 export type FunctionComponent<P extends {} = KiwuiAttributes> = 
-    (props: P & KiwuiAttributes) => KiwuiElement<any> | null // TODO: KiwuiNode ?
+    (props: P & KiwuiAttributes) => KiwuiNode // TODO: KiwuiNode ?
 
 export type ExoticComponent<P extends {} = KiwuiAttributes, T extends {} = {}> = {
-    (props: P & KiwuiAttributes): KiwuiElement<any> | null // TODO: KiwuiNode ?
+    (props: P & KiwuiAttributes): KiwuiNode // TODO: KiwuiNode ?
     exoticTag: string
 } & T
 
