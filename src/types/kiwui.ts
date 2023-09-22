@@ -25,6 +25,7 @@ export type JSXElement<
     Element extends HTMLElement = HTMLElement
 > = Attributes;
 
+export type FC<P extends {} = KiwuiAttributes> = FunctionComponent<P>
 export type FunctionComponent<P extends {} = KiwuiAttributes> = 
     (props: P & KiwuiAttributes) => KiwuiNode // TODO: KiwuiNode ?
 
