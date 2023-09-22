@@ -9,7 +9,7 @@ export type KiwuiElement<Type extends (keyof KiwuiHTML | FunctionComponent<any> 
         : Type
     props: Type extends (FunctionComponent<infer Props> | ExoticComponent<infer Props>)
         ? Props & KiwuiAttributes
-        : ({ children?: SingleKiwuiNode[] } & Omit<HTMLAttributes, 'children'>)
+        : HTMLAttributes
 }
 
 export interface KiwuiAttributes {
