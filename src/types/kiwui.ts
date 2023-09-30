@@ -9,7 +9,7 @@ export type KiwuiElement<Type extends (keyof KiwuiHTML | FunctionComponent<any> 
         : Type
     props: Type extends (FunctionComponent<infer Props> | ExoticComponent<infer Props>)
         ? Props & KiwuiAttributes
-        : ({ children?: SingleKiwuiNode[] } & Omit<HTMLAttributes, 'children'>)
+        : HTMLAttributes
 }
 
 export interface KiwuiAttributes {
@@ -25,11 +25,12 @@ export type JSXElement<
     Element extends HTMLElement = HTMLElement
 > = Attributes;
 
+export type FC<P extends {} = KiwuiAttributes> = FunctionComponent<P>
 export type FunctionComponent<P extends {} = KiwuiAttributes> = 
-    (props: P & KiwuiAttributes) => KiwuiElement<any> | null // TODO: KiwuiNode ?
+    (props: P & KiwuiAttributes) => KiwuiNode // TODO: KiwuiNode ?
 
 export type ExoticComponent<P extends {} = KiwuiAttributes, T extends {} = {}> = {
-    (props: P & KiwuiAttributes): KiwuiElement<any> | null // TODO: KiwuiNode ?
+    (props: P & KiwuiAttributes): KiwuiNode // TODO: KiwuiNode ?
     exoticTag: string
 } & T
 
