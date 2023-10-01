@@ -1,0 +1,1 @@
+export { memo } from './memo';

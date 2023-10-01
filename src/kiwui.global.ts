@@ -2,17 +2,18 @@ import {
     HTMLAttributes, 
     Key, 
     KiwuiElement, 
-    KiwuiHTML
+    KiwuiHTML,
+    KiwuiNode
 } from '.';
 
 declare global {
     namespace JSX {
-        interface Element extends KiwuiElement { }
+        type Element = KiwuiNode
         interface ElementAttributesProperty { props: {}; }
         interface ElementChildrenAttribute { children: {}; }
 
         interface IntrinsicAttributes { key?: Key | null | undefined; }
-        interface IntrinsicClassAttributes<T extends HTMLElement> extends HTMLAttributes { }
+        interface IntrinsicClassAttributes<T extends HTMLElement> extends HTMLAttributes<T> { }
 
         interface IntrinsicElements extends KiwuiHTML { }
     }
