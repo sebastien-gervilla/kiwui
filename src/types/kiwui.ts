@@ -45,3 +45,10 @@ type ShouldUpdateCallback<Props extends {}> =
 export type MemoComponent<Props extends {} = {}> = ExoticComponent<Props, {
     shouldUpdate?: ShouldUpdateCallback<Props>
 }>
+
+// Portal
+export type PortalComponent = ExoticComponent<{
+    children: KiwuiNode
+}, {
+    container: HTMLElement
+}>
