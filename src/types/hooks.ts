@@ -1,4 +1,4 @@
-import { ExoticComponent, KiwuiElement } from "./kiwui"
+import { ExoticComponent, KiwuiElement, KiwuiNode } from "./kiwui"
 
 // Global
 export type Hooks = {
@@ -34,6 +34,6 @@ export type Context<T> = {
     initialValue: T
     Provider: ExoticComponent<{
         value: T
-        children: KiwuiElement<any>
+        children: KiwuiNode
     }>
 }
