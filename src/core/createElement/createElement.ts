@@ -18,13 +18,15 @@ interface createElementImplementations {
 export const createElement: createElementImplementations = (
         type: any,
         props?: any,
-        ...children: any
+        ...children: KiwuiNode[]
     ) => {
     return {
         key: props?.key || null,
         type,
         props: {
-            children,
+            children: children.length > 1
+                ? children
+                : children[0],
             ...props
         }
     };
