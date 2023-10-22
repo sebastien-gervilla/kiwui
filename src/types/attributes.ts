@@ -317,6 +317,42 @@ type HTMLAttributeReferrerPolicy =
     | 'unsafe-url';
 
 // =======================================
+// =============    area    ==============
+// =======================================
+export interface AreaHTMLAttributes extends HTMLAttributes {
+    alt?: string | undefined;
+    coords?: string | undefined;
+    download?: any;
+    href?: string | undefined;
+    hrefLang?: string | undefined;
+    media?: string | undefined;
+    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
+    rel?: string | undefined;
+    shape?: string | undefined;
+    target?: string | undefined;
+}
+
+// =======================================
+// =============    audio    =============
+// =======================================
+export interface AudioHTMLAttributes extends MediaHTMLAttributes {}
+
+// =======================================
+// =============    base    ==============
+// =======================================
+export interface BaseHTMLAttributes extends HTMLAttributes {
+    href?: string | undefined;
+    target?: string | undefined;
+}
+
+// =======================================
+// ==========    blockquote    ===========
+// =======================================
+export interface BlockquoteHTMLAttributes extends HTMLAttributes {
+    cite?: string | undefined;
+}
+
+// =======================================
 // ============    button    =============
 // =======================================
 export interface ButtonHTMLAttributes extends HTMLAttributes {
@@ -330,6 +366,80 @@ export interface ButtonHTMLAttributes extends HTMLAttributes {
     name?: string | undefined;
     type?: 'submit' | 'reset' | 'button' | undefined;
     value?: string | ReadonlyArray<string> | number | undefined;
+}
+
+// =======================================
+// ============    canvas    =============
+// =======================================
+export interface CanvasHTMLAttributes extends HTMLAttributes {
+    height?: number | string | undefined;
+    width?: number | string | undefined;
+}
+
+// =======================================
+// ==============    col    ==============
+// =======================================
+export interface ColHTMLAttributes extends HTMLAttributes {
+    span?: number | undefined;
+    width?: number | string | undefined;
+}
+
+// =======================================
+// ===========    colgroup    ============
+// =======================================
+export interface ColgroupHTMLAttributes extends HTMLAttributes {
+    span?: number | undefined;
+}
+
+// =======================================
+// =============    data    ==============
+// =======================================
+export interface DataHTMLAttributes extends HTMLAttributes {
+    value?: string | ReadonlyArray<string> | number | undefined;
+}
+
+// =======================================
+// ============    details    ============
+// =======================================
+export interface DetailsHTMLAttributes extends HTMLAttributes {
+    open?: boolean | undefined;
+    // onToggle?: KiwuiEventHandler<T> | undefined; TODO:
+}
+
+// =======================================
+// ==============    del    ==============
+// =======================================
+export interface DelHTMLAttributes extends HTMLAttributes {
+    cite?: string | undefined;
+    dateTime?: string | undefined;
+}
+
+// =======================================
+// ============    dialog    =============
+// =======================================
+export interface DialogHTMLAttributes extends HTMLAttributes {
+    // onCancel?: ReactEventHandler<T> |  undefined; TODO:
+    // onClose?: ReactEventHandler<T> |  undefined;
+    open?: boolean | undefined;
+}
+
+// =======================================
+// =============    embed    =============
+// =======================================
+export interface EmbedHTMLAttributes extends HTMLAttributes {
+    height?: number | string | undefined;
+    src?: string | undefined;
+    type?: string | undefined;
+    width?: number | string | undefined;
+}
+
+// =======================================
+// ===========    fieldset    ============
+// =======================================
+export interface FieldsetHTMLAttributes extends HTMLAttributes {
+    disabled?: boolean | undefined;
+    form?: string | undefined;
+    name?: string | undefined;
 }
 
 // =======================================
@@ -352,6 +462,23 @@ export interface FormHTMLAttributes extends HTMLAttributes {
 // =======================================
 export interface HtmlHTMLAttributes extends HTMLAttributes {
     manifest?: string | undefined;
+}
+
+// =======================================
+// =============    iframe    =============
+// =======================================
+export interface IframeHTMLAttributes extends HTMLAttributes {
+    allow?: string | undefined;
+    allowFullScreen?: boolean | undefined;
+    allowTransparency?: boolean | undefined;
+    height?: number | string | undefined;
+    loading?: "eager" | "lazy" | undefined;
+    name?: string | undefined;
+    referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
+    sandbox?: string | undefined;
+    src?: string | undefined;
+    srcDoc?: string | undefined;
+    width?: number | string | undefined;
 }
 
 // =======================================
@@ -437,6 +564,14 @@ type HTMLInputTypeAttribute =
     | (string & {});
 
 // =======================================
+// ==============    ins    ==============
+// =======================================
+export interface InsHTMLAttributes extends HTMLAttributes {
+    form?: string | undefined;
+    htmlFor?: string | undefined;
+}
+
+// =======================================
 // =============    label    =============
 // =======================================
 export interface LabelHTMLAttributes extends HTMLAttributes {
@@ -471,6 +606,20 @@ export interface LinkHTMLAttributes extends HTMLAttributes {
 }
 
 // =======================================
+// ==============    map    ==============
+// =======================================
+export interface MapHTMLAttributes extends HTMLAttributes {
+    name?: string | undefined;
+}
+
+// =======================================
+// ==============    menu    =============
+// =======================================
+export interface MenuHTMLAttributes extends HTMLAttributes {
+    type?: string | undefined;
+}
+
+// =======================================
 // =============    meta    ==============
 // =======================================
 export interface MetaHTMLAttributes extends HTMLAttributes {
@@ -479,6 +628,34 @@ export interface MetaHTMLAttributes extends HTMLAttributes {
     httpEquiv?: string | undefined;
     name?: string | undefined;
     media?: string | undefined;
+}
+
+// =======================================
+// =============    meter    =============
+// =======================================
+export interface MeterHTMLAttributes extends HTMLAttributes {
+    form?: string | undefined;
+    high?: number | undefined;
+    low?: number | undefined;
+    max?: number | string | undefined;
+    min?: number | string | undefined;
+    optimum?: number | undefined;
+    value?: string | ReadonlyArray<string> | number | undefined;
+}
+
+// =======================================
+// ============    object    =============
+// =======================================
+export interface ObjectHTMLAttributes extends HTMLAttributes {
+    classID?: string | undefined;
+    data?: string | undefined;
+    form?: string | undefined;
+    height?: number | string | undefined;
+    name?: string | undefined;
+    type?: string | undefined;
+    useMap?: string | undefined;
+    width?: number | string | undefined;
+    wmode?: string | undefined;
 }
 
 // =======================================
@@ -491,6 +668,14 @@ export interface OlHTMLAttributes extends HTMLAttributes {
 }
 
 // =======================================
+// ===========    optgroup    ============
+// =======================================
+export interface OptgroupHTMLAttributes extends HTMLAttributes {
+    disabled?: boolean | undefined;
+    label?: string | undefined;
+}
+
+// =======================================
 // ============    option    =============
 // =======================================
 export interface OptionHTMLAttributes extends HTMLAttributes {
@@ -498,6 +683,37 @@ export interface OptionHTMLAttributes extends HTMLAttributes {
     label?: string | undefined;
     selected?: boolean | undefined;
     value?: string | ReadonlyArray<string> | number | undefined;
+}
+
+// =======================================
+// ============    output    =============
+// =======================================
+export interface OutputHTMLAttributes extends HTMLAttributes {
+    form?: string | undefined;
+    htmlFor?: string | undefined;
+    name?: string | undefined;
+}
+
+// =======================================
+// ===========    progress    ============
+// =======================================
+export interface ProgressHTMLAttributes extends HTMLAttributes {
+    max?: number | string | undefined;
+    value?: string | ReadonlyArray<string> | number | undefined;
+}
+
+// =======================================
+// =============    quote    =============
+// =======================================
+export interface QuoteHTMLAttributes extends HTMLAttributes {
+    cite?: string | undefined;
+}
+
+// =======================================
+// =============    slot    ==============
+// =======================================
+export interface SlotHTMLAttributes extends HTMLAttributes {
+    name?: string | undefined;
 }
 
 // =======================================
@@ -530,6 +746,19 @@ export interface SelectHTMLAttributes extends HTMLAttributes<HTMLSelectElement> 
     value?: string | ReadonlyArray<string> | number | undefined;
 
     onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
+}
+
+// =======================================
+// =============    source    =============
+// =======================================
+export interface SourceHTMLAttributes extends HTMLAttributes {
+    height?: number | string | undefined;
+    media?: string | undefined;
+    sizes?: string | undefined;
+    src?: string | undefined;
+    srcSet?: string | undefined;
+    type?: string | undefined;
+    width?: number | string | undefined;
 }
 
 // =======================================
@@ -594,7 +823,7 @@ export interface TextareaHTMLAttributes extends HTMLAttributes<HTMLTextAreaEleme
 }
 
 // =======================================
-// ===============    th    ==============
+// ==============    th    ===============
 // =======================================
 export interface ThHTMLAttributes extends HTMLAttributes {
     align?: "left" | "center" | "right" | "justify" | "char" | undefined;
@@ -603,6 +832,24 @@ export interface ThHTMLAttributes extends HTMLAttributes {
     rowSpan?: number | undefined;
     scope?: string | undefined;
     abbr?: string | undefined;
+}
+
+// =======================================
+// =============    time    ==============
+// =======================================
+export interface TimeHTMLAttributes extends HTMLAttributes {
+    dateTime?: string | undefined;
+}
+
+// =======================================
+// =============    track    =============
+// =======================================
+export interface TrackHTMLAttributes extends HTMLAttributes {
+    default?: boolean | undefined;
+    kind?: string | undefined;
+    label?: string | undefined;
+    src?: string | undefined;
+    srcLang?: string | undefined;
 }
 
 // =======================================
