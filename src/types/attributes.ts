@@ -8,15 +8,39 @@ import { CSSProperties } from './styles';
 export interface HTMLAttributes<Element extends HTMLElement = HTMLElement> extends KiwuiEvents<Element> {
     // Kiwui attributes
     key?: Key | null | undefined;
+    children?: KiwuiNode | undefined
 
     // Standard HTML Attributes
-    id?: string | undefined
-    className?: string | undefined
+    accessKey?: string | undefined;
+    className?: string | undefined;
+    contentEditable?: boolean | "inherit" | undefined;
+    contextMenu?: string | undefined;
+    dir?: string | undefined;
+    draggable?: boolean | undefined;
+    hidden?: boolean | undefined;
+    id?: string | undefined;
+    lang?: string | undefined;
+    nonce?: string | undefined;
+    placeholder?: string | undefined;
+    slot?: string | undefined;
+    spellCheck?: boolean | undefined;
+    style?: CSSProperties | undefined;
+    tabIndex?: number | undefined;
+    title?: string | undefined;
+    translate?: 'yes' | 'no' | undefined;
 
-    // CSS 
-    style? : CSSProperties | undefined
+    // WAI-ARIA
+    role?: AriaRole | undefined;
 
-    children?: KiwuiNode | undefined
+    // RDFa Attributes
+    about?: string | undefined;
+    datatype?: string | undefined;
+    inlist?: any;
+    prefix?: string | undefined;
+    property?: string | undefined;
+    resource?: string | undefined;
+    typeof?: string | undefined;
+    vocab?: string | undefined;
 }
 
 // All the WAI-ARIA 1.1 attributes from https://www.w3.org/TR/wai-aria-1.1/
@@ -75,11 +99,6 @@ interface AriaAttributes {
      */
     'aria-disabled'?: boolean | undefined;
     /**
-     * Indicates what functions can be performed when a dragged object is released on the drop target.
-     * @deprecated in ARIA 1.1
-     */
-    'aria-dropeffect'?: 'none' | 'copy' | 'execute' | 'link' | 'move' | 'popup' | undefined;
-    /**
      * Identifies the element that provides an error message for the object.
      * @see aria-invalid @see aria-describedby.
      */
@@ -91,11 +110,6 @@ interface AriaAttributes {
      * allows assistive technology to override the general default of reading in document source order.
      */
     'aria-flowto'?: string | undefined;
-    /**
-     * Indicates an element's "grabbed" state in a drag-and-drop operation.
-     * @deprecated in ARIA 1.1
-     */
-    'aria-grabbed'?: boolean | undefined;
     /** Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element. */
     'aria-haspopup'?: boolean | 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog' | undefined;
     /**
@@ -403,7 +417,7 @@ export interface DataHTMLAttributes extends HTMLAttributes {
 // =======================================
 export interface DetailsHTMLAttributes extends HTMLAttributes {
     open?: boolean | undefined;
-    // onToggle?: KiwuiEventHandler<T> | undefined; TODO:
+    onToggle?: ChangeEventHandler<HTMLDetailsElement> | undefined;
 }
 
 // =======================================
@@ -418,8 +432,8 @@ export interface DelHTMLAttributes extends HTMLAttributes {
 // ============    dialog    =============
 // =======================================
 export interface DialogHTMLAttributes extends HTMLAttributes {
-    // onCancel?: ReactEventHandler<T> |  undefined; TODO:
-    // onClose?: ReactEventHandler<T> |  undefined;
+    onCancel?: ChangeEventHandler<HTMLDialogElement> |  undefined;
+    onClose?: ChangeEventHandler<HTMLDialogElement> |  undefined;
     open?: boolean | undefined;
 }
 
@@ -721,8 +735,6 @@ export interface SlotHTMLAttributes extends HTMLAttributes {
 // =======================================
 export interface ScriptHTMLAttributes extends HTMLAttributes {
     async?: boolean | undefined;
-    /** @deprecated */
-    charSet?: string | undefined;
     crossOrigin?: "anonymous" | "use-credentials" | "" | undefined;
     defer?: boolean | undefined;
     integrity?: string | undefined;
