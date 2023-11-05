@@ -222,7 +222,7 @@ interface AriaAttributes {
 }
 
 // All the WAI-ARIA 1.1 role attribute values from https://www.w3.org/TR/wai-aria-1.1/#role_definitions
-type AriaRole =
+export type AriaRole =
     | 'alert'
     | 'alertdialog'
     | 'application'
@@ -313,13 +313,13 @@ export interface AnchorHTMLAttributes extends HTMLAttributes {
     referrerPolicy?: HTMLAttributeReferrerPolicy | undefined;
 }
 
-type HTMLAttributeAnchorTarget =
+export type HTMLAttributeAnchorTarget =
     | '_self'
     | '_blank'
     | '_parent'
     | '_top'
 
-type HTMLAttributeReferrerPolicy =
+export type HTMLAttributeReferrerPolicy =
     | ''
     | 'no-referrer'
     | 'no-referrer-when-downgrade'
@@ -552,7 +552,7 @@ export interface InputHTMLAttributes extends HTMLAttributes<HTMLInputElement> {
     onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
-type HTMLInputTypeAttribute =
+export type HTMLInputTypeAttribute =
     | 'button'
     | 'checkbox'
     | 'color'
