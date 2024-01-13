@@ -1,7 +1,7 @@
 {
   "name": "kiwui",
-  "version": "0.1.0",
-  "description": "A JavaScript UI Framework.",
+  "version": "1.0.0",
+  "description": "A JavaScript UI Library for web interfaces.",
   "author": "Sébastien Gervilla (sebastien-gervilla)",
   "license": "ISC",
   "keywords": [
