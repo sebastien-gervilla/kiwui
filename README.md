@@ -2,11 +2,6 @@
 
 🥝 A JavaScript UI library, inspired by React.
 
-[![NPM version][npm-image]][npm-url]
-[![Build][github-build]][github-build-url]
-![npm-typescript]
-[![License][github-license]][github-license-url]
-
 It features :
 
 - React API - Hooks, Fragments, memo...
