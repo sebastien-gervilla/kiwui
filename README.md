@@ -45,7 +45,7 @@ Having the same API as React, it works exactly the same.
 We initially intended on diving deeper into React, to better understand it.
 That's how we got the idea to re-create it in our own way, and doing so, see if we could improve some areas of the library.
 
-Eventhough i used it for some of my own projects, and it worked really well, it probably isn't as reliable as React nor does it have its eco-system (They are not compatible).
+Even though we used it for some of my own projects, and it worked really well, it probably isn't as reliable as React nor does it have its eco-system (They are not compatible).
 
 ## License
 
