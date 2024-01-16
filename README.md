@@ -10,10 +10,10 @@ It features :
 
 ## Installation
 
-To create a kiwui project, you may want to use CKP.
+To create a kiwui project, you may want to use [CKP](https://www.npmjs.com/package/create-kiwui-project).
 
 ```bash
-npx create-kiwui-project <project-directory> [options]
+npx create-kiwui-project@latest <project-directory> [options]
 ```
 
 ## Example
